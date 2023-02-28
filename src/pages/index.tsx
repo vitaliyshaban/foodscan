@@ -29,7 +29,7 @@ function App() {
 				<div
 					ref={scannerRef}
 					style={{ position: "relative", border: "3px solid red" }}>
-					{/* <video style={{ width: window.innerWidth, height: 480, border: '3px solid orange' }}/> */}
+					<video style={{ width: window.innerWidth, height: 'auto', border: '3px solid orange' }}/>
 					<canvas
 						className="drawingBuffer"
 						style={{
@@ -40,8 +40,8 @@ function App() {
 							// width: '100%',
 							border: "3px solid green",
 						}}
-						width="640"
-						height="480"
+						width="100%"
+						// height="480"
 					/>
 					{scanning ? (
 						<Scanner
