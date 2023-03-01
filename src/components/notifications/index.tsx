@@ -8,13 +8,13 @@ export default function Notifications({ barcode, satate }: any) {
 	useEffect(() => {
 		setShow(satate);
 	}, [satate]);
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setShow(false);
-		}, 5000);
+	// useEffect(() => {
+	// 	const timeout = setTimeout(() => {
+	// 		setShow(false);
+	// 	}, 5000);
 
-		return () => clearTimeout(timeout);
-	}, [satate]);
+	// 	return () => clearTimeout(timeout);
+	// }, [satate]);
 	return (
 		<>
 			{/* Global notification live region, render this permanently at the end of the document */}
