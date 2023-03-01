@@ -1,18 +1,15 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Notifications from "../notifications"
 
-function Scaner({Html5QrcodeScanner}:any) {
-	// const { Html5QrcodeScanner } = useHtml5QrCodeScanner(html5QrCodeScannerFile);
-	// const { devices, error } = useAvailableDevices(html5QrCodeScannerFile);
+function Scaner({Html5QrcodeScanner, devices, error}:any) {
     const [barcode, setBarcode] = useState<any>(null);
-    
 	useEffect(() => {
 	    // return () => {
 	        if (Html5QrcodeScanner) {
 	            let html5QrcodeScanner = new Html5QrcodeScanner(
 	                "reader",
-	                { fps: 100, qrbox: { width: 320, height: 200 } },
-	                /* verbose= */ false
+	                { facingMode: "user", fps: 100, qrbox: { width: 320, height: 200 } },
+	                false
 	            );
 	            html5QrcodeScanner.render(
 	                (data: any) => {
@@ -21,8 +18,9 @@ function Scaner({Html5QrcodeScanner}:any) {
 	                // (err: any) => console.log("err ->", err)
 	            );
 	        }
-	    // };
-	}, [Html5QrcodeScanner]);
+            console.log(devices)
+            // };
+	}, [Html5QrcodeScanner, devices]);
 
 	// beware: id must be the same as the first argument of Html5QrcodeScanner
 	return (
