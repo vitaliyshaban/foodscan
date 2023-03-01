@@ -9,7 +9,7 @@ function App() {
 		<div className="App">
 			<Header />
 			{openScanner ? (
-				<Scanner />
+				<Scanner setOpenScanner={setOpenScanner} />
 			) : (
 				<div onClick={() => setOpenScanner(true)}>Open</div>
 			)}

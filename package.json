@@ -13,6 +13,8 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
     "html5-qrcode": "^2.3.7",
     "i": "^0.3.7",
     "node-sass": "^8.0.0",

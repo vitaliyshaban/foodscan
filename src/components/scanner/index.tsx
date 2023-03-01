@@ -1,4 +1,4 @@
-import { Html5QrcodeScanner, Html5Qrcode } from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 import { useEffect, useState } from "react";
 
 import Notifications from "../notifications";
@@ -6,7 +6,7 @@ import Notifications from "../notifications";
 const qrcodeRegionId = "html5qr-code-full-region";
 let html5QrCode: any;
 
-const Scanner = () => {
+const Scanner = ({setOpenScanner}:any) => {
 	const [barcode, setBarcode] = useState<string>("");
 	// const [initCam, setInitCam] = useState<boolean>(false);
 	// const [camera, setCamera] = useState<any>();
@@ -52,6 +52,7 @@ const Scanner = () => {
 		// 	.catch((err) => {});
 	}, []);
 	const stopScan = () => {
+        setOpenScanner(false)
 		html5QrCode
 			.stop()
 			.then((ignore: any) => {
