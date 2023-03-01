@@ -8,7 +8,7 @@ import {
 	useAvailableDevices,
 } from "react-html5-qrcode-reader";
 
-const html5QrCodeScannerFile = process.env.PUBLIC_URL + "/html5-qrcode.min.js";
+const html5QrCodeScannerFile = process.env.PUBLIC_URL + "/html5-qrcode2.min.js";
 
 function App() {
 	const [openScanner, setOpenScanner] = useState<boolean>(false);
