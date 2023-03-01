@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import Notifications from "../notifications"
 
-function Scaner({Html5QrcodeScanner, devices, error}:any) {
+function Scaner({Html5QrcodeScanner}:any) {
     const [barcode, setBarcode] = useState<any>(null);
 	useEffect(() => {
 	    // return () => {
@@ -18,9 +18,8 @@ function Scaner({Html5QrcodeScanner, devices, error}:any) {
 	                // (err: any) => console.log("err ->", err)
 	            );
 	        }
-            console.log(devices)
             // };
-	}, [Html5QrcodeScanner, devices]);
+	}, [Html5QrcodeScanner]);
 
 	// beware: id must be the same as the first argument of Html5QrcodeScanner
 	return (
