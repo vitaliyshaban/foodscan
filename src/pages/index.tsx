@@ -2,25 +2,29 @@ import "./styles.scss";
 import React, { useState } from "react";
 import Header from "../components/header";
 import Scanner from "../components/scanner";
-import Result from "../components/scanner/result";
+// import Result from "../components/scanner/result";
+import {
+	useHtml5QrCodeScanner,
+	useAvailableDevices,
+} from "react-html5-qrcode-reader";
+
+const html5QrCodeScannerFile = process.env.PUBLIC_URL + "/html5-qrcode.min.js";
 
 function App() {
-	const [decodedResults, setDecodedResults] = useState<any>([]);
-	const onNewScanResult = (decodedText:any, decodedResult:any) => {
-		console.log("App [result]", decodedResult);
-		setDecodedResults((prev:any) => [...prev, decodedResult]);
-	};
+	const [openScanner, setOpenScanner] = useState<boolean>(false);
+	const { Html5QrcodeScanner } = useHtml5QrCodeScanner(html5QrCodeScannerFile);
+	// const { devices, error } = useAvailableDevices(html5QrCodeScannerFile);
+
 
 	return (
 		<div className="App">
 			<Header />
-			<Scanner
-				fps={10}
-				qrbox={250}
-				disableFlip={false}
-				qrCodeSuccessCallback={onNewScanResult}
-			/>
-			<Result results={decodedResults} />
+			{/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
+			{openScanner ? (
+				<Scanner Html5QrcodeScanner={Html5QrcodeScanner} />
+			) : (
+				<div onClick={() => setOpenScanner(true)}>Open</div>
+			)}
 		</div>
 	);
 }

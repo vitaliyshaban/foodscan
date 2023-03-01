@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@ericblade/quagga2": "^1.8.2",
+    "@headlessui/react": "^1.7.12",
+    "@heroicons/react": "^2.0.16",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -13,11 +15,13 @@
     "@types/react-dom": "^18.0.0",
     "html5-qrcode": "^2.3.7",
     "i": "^0.3.7",
+    "node-sass": "^8.0.0",
     "npm": "^9.5.1",
     "prop-types": "^15.8.1",
     "quagga": "^0.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-html5-qrcode-reader": "^1.1.1",
     "react-qr-barcode-scanner": "^1.0.6",
     "react-scripts": "5.0.1",
     "sass": "^1.58.3",
@@ -46,5 +50,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.7"
   }
 }
