@@ -14,7 +14,7 @@ const Scanner = () => {
 		Html5Qrcode.getCameras()
 			.then((devices) => {
 				if (devices) {
-					setCamera(devices[0].id);
+					setCamera(devices[1].id);
 				}
 			})
 			.catch((err) => {});
@@ -23,7 +23,7 @@ const Scanner = () => {
 			console.log(camera);
 			html5QrCode
 				.start(
-					camera,
+					{ deviceId: { exact: camera } },
 					{
 						fps: 10, // Optional, frame per seconds for qr code scanning
 						qrbox: { width: 250, height: 250 }, // Optional, if you want bounded box UI
