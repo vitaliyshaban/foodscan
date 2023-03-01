@@ -11,7 +11,7 @@ const Scanner = () => {
 	// const [camera, setCamera] = useState<any>();
 
 	useEffect(() => {
-        return () => {
+        // return () => {
 		const html5QrCode = new Html5Qrcode(qrcodeRegionId);
 		Html5Qrcode.getCameras()
 			.then((devices) => {
@@ -44,7 +44,7 @@ const Scanner = () => {
 				}
 			})
 			.catch((err) => {});
-        }
+        // }
 		// return () => {
 		// 	if (camera) {
 		// 		console.log(camera);
