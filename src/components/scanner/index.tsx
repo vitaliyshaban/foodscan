@@ -7,7 +7,7 @@ function Scaner({Html5QrcodeScanner}:any) {
     const [barcode, setBarcode] = useState<any>(null);
     
 	useEffect(() => {
-	    return () => {
+	    // return () => {
 	        if (Html5QrcodeScanner) {
 	            let html5QrcodeScanner = new Html5QrcodeScanner(
 	                "reader",
@@ -21,7 +21,7 @@ function Scaner({Html5QrcodeScanner}:any) {
 	                // (err: any) => console.log("err ->", err)
 	            );
 	        }
-	    };
+	    // };
 	}, [Html5QrcodeScanner]);
 
 	// beware: id must be the same as the first argument of Html5QrcodeScanner
