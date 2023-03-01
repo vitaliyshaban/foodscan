@@ -18,7 +18,7 @@ const Scanner = () => {
 			.start(
 				// { deviceId: { exact: devices[0].id } },
 				// device,
-				{ facingMode: "user" },
+				{ facingMode: "environment" },
 				{
 					fps: 10, // Optional, frame per seconds for qr code scanning
 					qrbox: { width: 340, height: 250 }, // Optional, if you want bounded box UI
